@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work in Progress 2024-25 - Ruby Antonowicz-Behnan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="project-page">
+    <header>
+        <h1>Ruby Antonowicz-Behnan</h1>
+    </header>
+    
+    <a href="project1.html" class="back-link">← Back</a>
+    
+    <h2 class="project-title">Work in Progress 2024-25: Broadworks by Hive Creates, Somers Gallery and Embassy Gallery</h2>
+
+    <div class="image-grid">
+        <img src="images/wip01.png" alt="Work in Progress" onclick="openLightbox(this)">
+        <img src="images/wip02.jpg" alt="Work in Progress" onclick="openLightbox(this)">
+        <img src="images/wip03.jpg" alt="Work in Progress" onclick="openLightbox(this)">
+        <img src="images/wip04.jpg" alt="Work in Progress" onclick="openLightbox(this)">
+        <img src="images/wip05.jpg" alt="Work in Progress" onclick="openLightbox(this)">
+        <img src="images/wip06.jpg" alt="Work in Progress" onclick="openLightbox(this)">
+        <img src="images/wip07.jpg" alt="Work in Progress" onclick="openLightbox(this)">
+        <img src="images/wip08.jpg" alt="Work in Progress" onclick="openLightbox(this)">
+        <img src="images/wip09.jpg" alt="Work in Progress" onclick="openLightbox(this)">
+        <img src="images/wip10.jpg" alt="Work in Progress" onclick="openLightbox(this)">
+        <img src="images/wip11.jpg" alt="Work in Progress" onclick="openLightbox(this)">
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <script>
+        function openLightbox(img) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = img.src;
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>

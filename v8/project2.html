@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Present Voices - Ruby Antonowicz-Behnan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="project-page">
+    <header>
+        <h1>Ruby Antonowicz-Behnan</h1>
+    </header>
+    
+    <a href="index.html" class="back-link">← Back</a>
+    
+    <h2 class="project-title">Present Voices</h2>
+
+    <div class="image-grid">
+        <img src="images/Present_Voices_001.jpeg" alt="Present Voices" onclick="openLightbox(this)">
+        <img src="images/Present_Voices_002.jpeg" alt="Present Voices" onclick="openLightbox(this)">
+        <img src="images/Present_Voices_003.jpeg" alt="Present Voices" onclick="openLightbox(this)">
+        <img src="images/Present_Voices_004.jpeg" alt="Present Voices" onclick="openLightbox(this)">
+        <img src="images/Present_Voices_005.jpeg" alt="Present Voices" onclick="openLightbox(this)">
+        <img src="images/Present_Voices_006.jpeg" alt="Present Voices" onclick="openLightbox(this)">
+        <img src="images/Present_Voices_007.jpeg" alt="Present Voices" onclick="openLightbox(this)">
+        <img src="images/Present_Voices_008.jpeg" alt="Present Voices" onclick="openLightbox(this)">
+        <img src="images/Present_Voices_009.jpeg" alt="Present Voices" onclick="openLightbox(this)">
+        <img src="images/Present_Voices_010.jpeg" alt="Present Voices" onclick="openLightbox(this)">
+        <img src="images/Present_Voices_011.jpeg" alt="Present Voices" onclick="openLightbox(this)">
+        <img src="images/Present_Voices_012.jpeg" alt="Present Voices" onclick="openLightbox(this)">
+        <img src="images/Present_Voices_013.jpeg" alt="Present Voices" onclick="openLightbox(this)">
+        <img src="images/Present_Voices_014.jpeg" alt="Present Voices" onclick="openLightbox(this)">
+        <img src="images/Present_Voices_015.jpeg" alt="Present Voices" onclick="openLightbox(this)">
+        <img src="images/Present_Voices_016.jpeg" alt="Present Voices" onclick="openLightbox(this)">
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <script>
+        function openLightbox(img) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = img.src;
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>

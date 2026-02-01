@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Residencies - Ruby Antonowicz-Behnan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="project-page">
+    <header>
+        <h1>Ruby Antonowicz-Behnan</h1>
+    </header>
+    
+    <a href="project1.html" class="back-link">← Back</a>
+    
+    <h2 class="project-title">2025 Residencies: Home Live Art and Cie Natalie Beasse</h2>
+
+    <div class="image-grid">
+        <img src="images/residency01.jpg" alt="2025 Residencies" onclick="openLightbox(this)">
+        <img src="images/residency02.jpg" alt="2025 Residencies" onclick="openLightbox(this)">
+        <img src="images/residency03.jpg" alt="2025 Residencies" onclick="openLightbox(this)">
+        <img src="images/residency04.jpg" alt="2025 Residencies" onclick="openLightbox(this)">
+        <img src="images/residency05.jpg" alt="2025 Residencies" onclick="openLightbox(this)">
+        <img src="images/residency06.png" alt="2025 Residencies" onclick="openLightbox(this)">
+        <img src="images/residency07.png" alt="2025 Residencies" onclick="openLightbox(this)">
+        <img src="images/residency08.png" alt="2025 Residencies" onclick="openLightbox(this)">
+        <img src="images/residency09.png" alt="2025 Residencies" onclick="openLightbox(this)">
+        <img src="images/residency10.png" alt="2025 Residencies" onclick="openLightbox(this)">
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <script>
+        function openLightbox(img) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = img.src;
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>

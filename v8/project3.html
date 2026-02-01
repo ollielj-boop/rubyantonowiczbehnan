@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playground 2025 - Ruby Antonowicz-Behnan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="project-page">
+    <header>
+        <h1>Ruby Antonowicz-Behnan</h1>
+    </header>
+    
+    <a href="index.html" class="back-link">← Back</a>
+    
+    <h2 class="project-title">Playground 2025</h2>
+
+    <div class="image-grid">
+        <img src="images/playground01.jpg" alt="Playground 2025" onclick="openLightbox(this)">
+        <img src="images/playground02.jpg" alt="Playground 2025" onclick="openLightbox(this)">
+        <img src="images/playground03.jpg" alt="Playground 2025" onclick="openLightbox(this)">
+        <img src="images/playground04.jpg" alt="Playground 2025" onclick="openLightbox(this)">
+        <img src="images/playground05.jpg" alt="Playground 2025" onclick="openLightbox(this)">
+        <img src="images/playground06.jpg" alt="Playground 2025" onclick="openLightbox(this)">
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <script>
+        function openLightbox(img) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = img.src;
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>
