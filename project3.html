@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Three - Ruby Antonowicz-Behnan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="project-page">
+    <a href="index.html" class="back-link">← Back</a>
+    
+    <h2 class="project-title">Project Three</h2>
+
+    <div class="image-grid">
+        <img src="placeholder1.jpg" alt="Project image 1" onclick="openLightbox(this)">
+        <img src="placeholder2.jpg" alt="Project image 2" onclick="openLightbox(this)">
+        <img src="placeholder3.jpg" alt="Project image 3" onclick="openLightbox(this)">
+        <img src="placeholder4.jpg" alt="Project image 4" onclick="openLightbox(this)">
+        <img src="placeholder5.jpg" alt="Project image 5" onclick="openLightbox(this)">
+        <img src="placeholder6.jpg" alt="Project image 6" onclick="openLightbox(this)">
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <script>
+        function openLightbox(img) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = img.src;
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>
