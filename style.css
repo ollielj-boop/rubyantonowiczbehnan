@@ -45,10 +45,6 @@ header h1 {
 }
 
 /* Project Page Styles */
-.project-page {
-    max-width: 1400px;
-    margin: 0 auto;
-}
 
 .back-link {
     display: inline-block;
