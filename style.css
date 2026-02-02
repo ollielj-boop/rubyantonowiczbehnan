@@ -63,7 +63,15 @@ header h1 {
     text-align: left;
     margin-bottom: 60px;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: bold;
+}
+
+.sub-project-title {
+    text-align: left;
+    margin-top: 80px;
+    margin-bottom: 30px;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .project-description {
@@ -75,6 +83,23 @@ header h1 {
 .project-description p {
     font-size: 16px;
     margin-bottom: 20px;
+}
+
+.external-links {
+    margin: 40px 0;
+    display: flex;
+    gap: 30px;
+}
+
+.external-links a {
+    font-size: 16px;
+    color: #333;
+    text-decoration: underline;
+    transition: opacity 0.3s ease;
+}
+
+.external-links a:hover {
+    opacity: 0.5;
 }
 
 .video-container {
