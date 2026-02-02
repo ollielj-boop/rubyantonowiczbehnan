@@ -62,16 +62,24 @@ header h1 {
 .project-title {
     text-align: left;
     margin-bottom: 60px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
 }
 
 .sub-project-title {
     text-align: left;
     margin-top: 80px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.project-subtitle {
+    text-align: left;
     margin-bottom: 30px;
     font-size: 16px;
-    font-weight: bold;
+    font-style: italic;
+    font-weight: normal;
 }
 
 .project-description {
@@ -214,8 +222,8 @@ header h1 {
 /* Instagram icon */
 .instagram-link {
     position: fixed;
-    bottom: 20px;
-    left: 20px;
+    top: 40px;
+    right: 40px;
     z-index: 100;
 }
 
