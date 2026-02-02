@@ -18,9 +18,19 @@ header {
 
 header h1 {
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: 1px;
     margin-bottom: 20px;
+}
+
+/* Make artist name clickable on project pages */
+.project-page header h1 {
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.project-page header h1:hover {
+    opacity: 0.5;
 }
 
 .project-links {
@@ -152,6 +162,7 @@ header h1 {
     align-items: center;
     justify-content: center;
     padding: 40px;
+    cursor: pointer;
 }
 
 .lightbox.active {
@@ -165,6 +176,7 @@ header h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: default;
 }
 
 .lightbox img {
@@ -221,7 +233,7 @@ header h1 {
 
 /* Instagram icon */
 .instagram-link {
-    position: fixed;
+    position: absolute;
     top: 40px;
     right: 40px;
     z-index: 100;
