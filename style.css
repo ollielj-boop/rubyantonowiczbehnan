@@ -66,6 +66,28 @@ header h1 {
     font-weight: 400;
 }
 
+.project-description {
+    max-width: 800px;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.project-description p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.video-container {
+    margin: 60px 0;
+    max-width: 800px;
+}
+
+.video-container iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+}
+
 .image-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
