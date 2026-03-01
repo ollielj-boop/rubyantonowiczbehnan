@@ -6,108 +6,54 @@
     <title>Work in Progress 2024-25 - Ruby Antonowicz-Behnan</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="project-page">
+<body>
     <header>
         <h1 onclick="window.location.href='index.html'">Ruby Antonowicz-Behnan</h1>
     </header>
     
     <a href="project1.html" class="back-link">← Back</a>
-    
-    <h2 class="project-title">Work in Progress 2024-25: Broadworks by Hive Creates, Somers Gallery and Embassy Gallery</h2>
+
+    <h2 class="sub-project-title">Broadworks by Hive Curates, Old Broad St, London</h2>
 
     <div class="project-description">
-        <p>Requiem in Progress is a multidisciplinary performance duo by Yui Yamamoto and Ruby Antonowicz-Behnan, collaborating to explore the shared experience of grief. Rooted in sound-based performance, the project encompasses theatre, experimental performance, and installation with the aim of opening new perspectives on private and collective loss, examining how grief is experienced, voiced, and shared within performative space.</p>
+        <p>Interactive durational sound performance and installation. Voice, text and a set of analogue audio devices - a portable record player, cassettes, and a voice recorder serve as activation points throughout the duration.</p>
+        
+        <p>The audience was invited to wash and release a stone into the water as an act of remembrance. Contact mics captured the sound of this ritual, becoming a sonic component.</p>
     </div>
 
-    <div class="image-grid">
-        <img src="images/wip01.png" alt="Work in Progress" onclick="openLightbox(this)">
-        <img src="images/wip02.jpg" alt="Work in Progress" onclick="openLightbox(this)">
-        <img src="images/wip03.jpg" alt="Work in Progress" onclick="openLightbox(this)">
-        <img src="images/wip04.jpg" alt="Work in Progress" onclick="openLightbox(this)">
-        <img src="images/wip05.jpg" alt="Work in Progress" onclick="openLightbox(this)">
-        <img src="images/wip06.jpg" alt="Work in Progress" onclick="openLightbox(this)">
-        <img src="images/wip07.jpg" alt="Work in Progress" onclick="openLightbox(this)">
-        <img src="images/wip08.jpg" alt="Work in Progress" onclick="openLightbox(this)">
-        <img src="images/wip09.jpg" alt="Work in Progress" onclick="openLightbox(this)">
-        <img src="images/wip10.jpg" alt="Work in Progress" onclick="openLightbox(this)">
-        <img src="images/wip11.jpg" alt="Work in Progress" onclick="openLightbox(this)">
-        <img src="images/wip12.jpg" alt="Work in Progress" onclick="openLightbox(this)">
-        <img src="images/wip13.jpg" alt="Work in Progress" onclick="openLightbox(this)">
+    <div class="image-grid-3-col">
+        <img src="images/wip01.png" alt="Broadworks">
+        <img src="images/wip02.jpg" alt="Broadworks">
+        <img src="images/wip03.jpg" alt="Broadworks">
+        <img src="images/wip04.jpg" alt="Broadworks">
+        <img src="images/wip05.jpg" alt="Broadworks">
+        <img src="images/wip06.jpg" alt="Broadworks">
+        <img src="images/wip07.jpg" alt="Broadworks">
+        <img src="images/wip12.jpg" alt="Broadworks">
+        <img src="images/wip13.jpg" alt="Broadworks">
+    </div>
+
+    <h2 class="sub-project-title">Embassy Gallery, Chisenhale and Somers Gallery</h2>
+
+    <div class="project-description">
+        <p>Our initial investigations were presented at the Embassy Gallery in Edinburgh and Chisenhale, London. Exploring physical, geographical, and emotional proximity to loss and remembrance, the performance incorporated snippets of vinyl recordings from the artist's late father's vast archive alongside sounds evoking global events. At Somers Gallery, we explored the intimate and private space of grief, incorporating our recorded conversation on the death of loved ones, and started testing the use of our live voice in the performance.</p>
+    </div>
+
+    <div class="image-grid-4-col">
+        <img src="images/wip08.jpg" alt="Embassy Gallery">
+        <img src="images/wip09.jpg" alt="Performance">
+        <img src="images/wip10.jpg" alt="Performance">
+        <img src="images/wip11.jpg" alt="Somers Gallery">
     </div>
 
     <div class="video-container">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/3hZkKoHOdik" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/3hZkKoHOdik" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
     <div class="video-container">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/hYZRG9ff5Pc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/hYZRG9ff5Pc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
-        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
-        <button class="lightbox-prev" onclick="changeImage(-1)">&#8249;</button>
-        <div class="lightbox-content">
-            <img id="lightbox-img" src="" alt="">
-        </div>
-        <button class="lightbox-next" onclick="changeImage(1)">&#8250;</button>
-    </div>
-
-    <script>
-        let currentImages = [];
-        let currentIndex = 0;
-
-        function openLightbox(img) {
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            
-            currentImages = Array.from(document.querySelectorAll('.image-grid img'));
-            currentIndex = currentImages.indexOf(img);
-            
-            lightboxImg.src = img.src;
-            lightbox.classList.add('active');
-        }
-
-        function closeLightbox() {
-            const lightbox = document.getElementById('lightbox');
-            lightbox.classList.remove('active');
-        }
-
-        function changeImage(direction) {
-            currentIndex += direction;
-            
-            if (currentIndex >= currentImages.length) {
-                currentIndex = 0;
-            } else if (currentIndex < 0) {
-                currentIndex = currentImages.length - 1;
-            }
-            
-            const lightboxImg = document.getElementById('lightbox-img');
-            lightboxImg.src = currentImages[currentIndex].src;
-        }
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeLightbox();
-            } else if (e.key === 'ArrowLeft') {
-                changeImage(-1);
-            } else if (e.key === 'ArrowRight') {
-                changeImage(1);
-            }
-        });
-
-        // Close when clicking outside the image
-        document.getElementById('lightbox').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeLightbox();
-            }
-        });
-
-        // Prevent clicks on image from closing
-        document.querySelector('.lightbox-content').addEventListener('click', function(e) {
-            e.stopPropagation();
-        });
-    </script>
     <a href="https://www.instagram.com/rubyantonowiczbehnan" target="_blank" class="instagram-link">
         <img src="images/instagram-icon.svg" alt="Instagram">
     </a>
