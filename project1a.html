@@ -5,6 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reignite Residency - Ruby Antonowicz-Behnan</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Lightbox styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            cursor: pointer;
+        }
+        
+        .lightbox img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+        
+        .lightbox.active {
+            display: block;
+        }
+        
+        /* New image grid layout */
+        .image-grid-three-column {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 20px;
+            max-width: 1200px;
+            margin-bottom: 40px;
+        }
+        
+        .image-grid-three-column .tall-left,
+        .image-grid-three-column .tall-right {
+            height: 700px;
+        }
+        
+        .image-grid-three-column .tall-left img,
+        .image-grid-three-column .tall-right img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+        }
+        
+        .image-grid-three-column .middle-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .image-grid-three-column .middle-grid img {
+            width: 100%;
+            height: 340px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .image-grid-three-column {
+                grid-template-columns: 1fr;
+            }
+            
+            .image-grid-three-column .middle-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -19,24 +92,47 @@
         <p>Reignite Residency with Home Live Art in Hastings, in collaboration with outside eye, Ed McKeon. 5 days, focused on investigating the use of our voices in composition, examining vocal techniques, sustaining single words to create harmony, and exploring phrases to build rhythm. Also examining spatial and immersive elements, including our movement and the positioning of the sound sources in relation to the audience. Culminated in a public sharing and feedback session</p>
     </div>
 
-    <div class="image-grid-main-plus-2x2">
-        <div class="main-image">
-            <img src="images/residency01.jpg" alt="Reignite Residency">
+    <div class="image-grid-three-column">
+        <div class="tall-left">
+            <img src="images/residency01.jpg" alt="Reignite Residency" onclick="openLightbox(this.src)">
         </div>
-        <div class="side-images">
-            <img src="images/residency02.jpg" alt="Reignite Residency">
-            <img src="images/residency03.jpg" alt="Reignite Residency">
-            <img src="images/residency04.jpg" alt="Reignite Residency">
-            <img src="images/residency05.jpg" alt="Reignite Residency">
+        <div class="middle-grid">
+            <img src="images/residency02.jpg" alt="Reignite Residency" onclick="openLightbox(this.src)">
+            <img src="images/residency03.jpg" alt="Reignite Residency" onclick="openLightbox(this.src)">
+            <img src="images/residency04.jpg" alt="Reignite Residency" onclick="openLightbox(this.src)">
+            <img src="images/residency05.jpg" alt="Reignite Residency" onclick="openLightbox(this.src)">
+        </div>
+        <div class="tall-right">
+            <img src="images/ed.jpg" alt="Ed McKeon collaboration" onclick="openLightbox(this.src)">
         </div>
     </div>
 
-    <div class="video-image-row">
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/sKMbMdnsfuA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <img src="images/ed.jpg" alt="Ed McKeon collaboration">
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/sKMbMdnsfuA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <img src="" id="lightbox-img" alt="">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            document.getElementById('lightbox').classList.add('active');
+            document.getElementById('lightbox-img').src = src;
+        }
+        
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+        
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
 
     <a href="https://www.instagram.com/rubyantonowiczbehnan" target="_blank" class="instagram-link">
         <img src="images/instagram-icon.svg" alt="Instagram">
