@@ -41,5 +41,24 @@
     <a href="https://www.instagram.com/rubyantonowiczbehnan" target="_blank" class="instagram-link">
         <img src="images/instagram-icon.svg" alt="Instagram">
     </a>
+
+    <script>
+        // Match Ed image height to video height
+        function matchImageToVideo() {
+            const videoContainer = document.querySelector('.video-image-row .video-container');
+            const edImage = document.querySelector('.video-image-row img');
+            
+            if (videoContainer && edImage) {
+                const videoHeight = videoContainer.offsetHeight;
+                edImage.style.height = videoHeight + 'px';
+                edImage.style.width = 'auto';
+                edImage.style.objectFit = 'contain';
+            }
+        }
+        
+        // Run on load and resize
+        window.addEventListener('load', matchImageToVideo);
+        window.addEventListener('resize', matchImageToVideo);
+    </script>
 </body>
 </html>
