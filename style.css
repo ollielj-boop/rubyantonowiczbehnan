@@ -59,7 +59,7 @@ header h1 {
 .back-link {
     display: inline-block;
     margin-top: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     margin-left: 40px;
     color: #333;
     text-decoration: none;
@@ -406,10 +406,11 @@ header h1 {
 h2 {
     font-size: 18px;
     font-weight: bold;
-    margin-bottom: 40px;
-    margin-top: 40px;
+    margin-bottom: 10px;
+    margin-top: 20px;
 }
 
 .sub-project-title {
     margin-top: 80px;
+    margin-bottom: 10px;
 }
