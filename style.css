@@ -425,7 +425,7 @@ h2 {
 }
 
 .video-image-row .video-container {
-    flex: 1;
+    flex: 0 0 590px;
     margin-bottom: 0;
     height: 360px;
 }
@@ -436,7 +436,8 @@ h2 {
 }
 
 .video-image-row img {
-    width: auto;
+    flex: 0 0 590px;
+    width: 590px;
     height: 360px;
     object-fit: cover;
 }
@@ -447,7 +448,13 @@ h2 {
         flex-direction: column;
     }
     
+    .video-image-row .video-container {
+        flex: none;
+        width: 100%;
+    }
+    
     .video-image-row img {
+        flex: none;
         width: 100%;
         height: auto;
     }
