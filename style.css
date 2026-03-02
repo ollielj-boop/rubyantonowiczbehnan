@@ -421,18 +421,36 @@ h2 {
     gap: 20px;
     margin-bottom: 40px;
     max-width: 1200px;
-    align-items: flex-start;
+    align-items: stretch;
 }
 
 .video-image-row .video-container {
     flex: 1;
     margin-bottom: 0;
+    height: 450px;
+}
+
+.video-image-row .video-container iframe {
+    width: 100%;
+    height: 100%;
 }
 
 .video-image-row img {
     width: auto;
-    height: 100%;
+    height: 450px;
     object-fit: cover;
+}
+
+/* Responsive video image row */
+@media (max-width: 768px) {
+    .video-image-row {
+        flex-direction: column;
+    }
+    
+    .video-image-row img {
+        width: 100%;
+        height: auto;
+    }
 }
 
 /* Clickable images for lightbox */
