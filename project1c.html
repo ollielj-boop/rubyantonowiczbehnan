@@ -5,6 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Cabine Residency - Ruby Antonowicz-Behnan</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Lightbox styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            cursor: pointer;
+        }
+        
+        .lightbox img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+        
+        .lightbox.active {
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -24,16 +52,43 @@
     </div>
 
     <div class="image-grid-3-col">
-        <img src="images/residency06.png" alt="La Cabine Residency">
-        <img src="images/residency07.png" alt="La Cabine Residency">
-        <img src="images/residency08.png" alt="La Cabine Residency">
-        <img src="images/residency09.png" alt="La Cabine Residency">
-        <img src="images/residency10.png" alt="La Cabine Residency">
+        <img src="images/residency06.png" alt="La Cabine Residency" onclick="openLightbox(this.src)">
+        <img src="images/residency07.png" alt="La Cabine Residency" onclick="openLightbox(this.src)">
+        <img src="images/residency08.png" alt="La Cabine Residency" onclick="openLightbox(this.src)">
+        <img src="images/residency09.png" alt="La Cabine Residency" onclick="openLightbox(this.src)">
+        <img src="images/residency10.png" alt="La Cabine Residency" onclick="openLightbox(this.src)">
+        <img src="images/fr1.jpg" alt="La Cabine Residency" onclick="openLightbox(this.src)">
+        <img src="images/fr2.jpg" alt="La Cabine Residency" onclick="openLightbox(this.src)">
+        <img src="images/fr3.jpg" alt="La Cabine Residency" onclick="openLightbox(this.src)">
+        <img src="images/fr4.jpg" alt="La Cabine Residency" onclick="openLightbox(this.src)">
     </div>
 
     <div class="video-container">
         <iframe src="https://drive.google.com/file/d/1wh0_rJwizmxq4K1_kyITtxUovFx5zFDZ/preview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <img src="" id="lightbox-img" alt="">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            document.getElementById('lightbox').classList.add('active');
+            document.getElementById('lightbox-img').src = src;
+        }
+        
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+        
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
 
     <a href="https://www.instagram.com/rubyantonowiczbehnan" target="_blank" class="instagram-link">
         <img src="images/instagram-icon.svg" alt="Instagram">
